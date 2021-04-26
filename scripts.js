@@ -62,3 +62,29 @@ function botonPulsado(comp){
     }
 
 }
+
+function textoAlReves(){
+
+    var texto = document.getElementById("cajaTexto").value;
+
+    var cadenaMinus = texto.toLowerCase();
+    var cadenaSinEspacios = cadenaMinus.split("");
+
+    var cadena = "";
+    for(i in cadenaSinEspacios) {
+
+        if(cadenaSinEspacios[i] != " ") {
+            cadena += cadenaSinEspacios[i];
+        }
+    }
+
+    var cadenaReves = cadena.split("").reverse();
+
+    var resultado = "";
+    for(i in cadenaReves){
+        resultado += cadenaReves[i].toString();
+    }
+
+    alert("El texto dado la vuelta es: " + resultado);
+
+}
