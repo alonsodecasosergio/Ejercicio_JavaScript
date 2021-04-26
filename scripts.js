@@ -44,3 +44,21 @@ function palindromo(){
         alert("La frase: " + frase + " NO es un palindromo");
     }
 }
+
+function botonPulsado(comp){
+
+    var id = comp.id;
+
+    if(id === "boton_1"){
+        document.getElementById("texto").innerHTML= 'Ha pulsado el BOTON 1';
+    }
+
+    if(id === "boton_2"){
+        document.getElementById("texto").innerHTML= 'Ha pulsado el BOTON 2';
+    }
+
+    if(id === "boton_3"){
+        document.getElementById("texto").innerHTML= 'Ha pulsado el BOTON 3';
+    }
+
+}
