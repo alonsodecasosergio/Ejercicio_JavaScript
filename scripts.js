@@ -1,90 +1,87 @@
-function parImpar() {
-    var numero = prompt("Introduzca un numero");
-    var resultado;
+$(document).ready(function(){
 
-    if(numero % 2 == 0) {
-      resultado = "par";
-    }
-    else {
-      resultado = "impar";
-    }
+    $("#boton").click(function(){
+        var numero = prompt("Introduzca un numero");
+        var resultado;
 
-    alert("El numero "+ numero  +" es "+resultado);
-}
-
-function palindromo(){
-
-    var frase = prompt("Introduzca una frase");
-
-    var cadenaMinus = frase.toLowerCase();
-    var cadenaSinEspacios = cadenaMinus.split("");
-
-    var cadena = "";
-    for(i in cadenaSinEspacios) {
-
-        if(cadenaSinEspacios[i] != " ") {
-            cadena += cadenaSinEspacios[i];
+        if(numero % 2 == 0) {
+        resultado = "par";
         }
-    }
-
-    var cadenaReves = cadena.split("").reverse();
-
-    var palindromo = true;
-
-    for(i in cadena){
-
-        if(cadenaReves[i] != cadena[i]){
-            palindromo = false;
+        else {
+        resultado = "impar";
         }
-    }
 
-    if(palindromo){
-        alert("La frase: " + frase + " es un palindromo ");
-    }else{
-        alert("La frase: " + frase + " NO es un palindromo");
-    }
-}
+        alert("El numero "+ numero  +" es "+resultado);
+    })
 
-function botonPulsado(comp){
+    $("#palindromo").click(function(){
+        var frase = prompt("Introduzca una frase");
 
-    var id = comp.id;
+        var cadenaMinus = frase.toLowerCase();
+        var cadenaSinEspacios = cadenaMinus.split("");
 
-    if(id === "boton_1"){
-        document.getElementById("texto").innerHTML= 'Ha pulsado el BOTON 1';
-    }
+        var cadena = "";
+        for(i in cadenaSinEspacios) {
 
-    if(id === "boton_2"){
-        document.getElementById("texto").innerHTML= 'Ha pulsado el BOTON 2';
-    }
-
-    if(id === "boton_3"){
-        document.getElementById("texto").innerHTML= 'Ha pulsado el BOTON 3';
-    }
-
-}
-
-function textoAlReves(){
-
-    var texto = document.getElementById("cajaTexto").value;
-
-    var cadenaMinus = texto.toLowerCase();
-    var cadenaSinEspacios = cadenaMinus.split("");
-
-    var cadena = "";
-    for(i in cadenaSinEspacios) {
-
-        if(cadenaSinEspacios[i] != " ") {
-            cadena += cadenaSinEspacios[i];
+            if(cadenaSinEspacios[i] != " ") {
+                cadena += cadenaSinEspacios[i];
+            }
         }
-    }
 
-    var cadenaReves = cadena.split("").reverse();
+        var cadenaReves = cadena.split("").reverse();
 
-    var resultado = "";
-    for(i in cadenaReves){
-        resultado += cadenaReves[i].toString();
-    }
+        var palindromo = true;
 
-    alert("El texto dado la vuelta es: " + resultado);
+        for(i in cadena){
 
-}
+            if(cadenaReves[i] != cadena[i]){
+                palindromo = false;
+            }
+        }
+
+        if(palindromo){
+            alert("La frase: " + frase + " es un palindromo ");
+        }else{
+            alert("La frase: " + frase + " NO es un palindromo");
+        }
+    })
+
+    $("#boton_1").click(function(){
+
+        $('#texto').text("Ha pulsado el BOTON 1");
+        
+    });
+
+    $("#boton_2").click(function(){
+        $('#texto').text("Ha pulsado el BOTON 2");
+    });
+
+    $("#boton_3").click(function(){
+        $('#texto').text("Ha pulsado el BOTON 3");
+    });
+
+    $("#alReves").click(function(){
+    
+        var texto = $('#cajaTexto').val()
+
+        var cadenaMinus = texto.toLowerCase();
+        var cadenaSinEspacios = cadenaMinus.split("");
+
+        var cadena = "";
+        for(i in cadenaSinEspacios) {
+
+            if(cadenaSinEspacios[i] != " ") {
+                cadena += cadenaSinEspacios[i];
+            }
+        }
+
+        var cadenaReves = cadena.split("").reverse();
+
+        var resultado = "";
+        for(i in cadenaReves){
+            resultado += cadenaReves[i].toString();
+        }
+
+        alert("El texto dado la vuelta es: " + resultado);
+    });
+});
